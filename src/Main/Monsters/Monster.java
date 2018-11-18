@@ -1,4 +1,9 @@
 package Main.Monsters;
+/**
+ * Superklass för alla monster. Abstract.
+ * TODO implementera lootItem så att den bara fungerar på döda monster.
+ * TODO fixa så att döda monster har en annan description på ett snyggare sätt?
+ */
 
 import Main.Interfaces.Describable;
 import Main.Interfaces.Lootable;
@@ -17,6 +22,9 @@ public abstract class Monster implements Describable, Lootable {
 
     @Override
     public String getDescription() {
+        if (this.currHealth <= 0) {
+            return this.beskrivning + "It's dead.";
+        }
         return this.beskrivning;
     }
 
