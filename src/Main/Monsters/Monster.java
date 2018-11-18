@@ -1,3 +1,9 @@
+package Main.Monsters;
+
+import Main.Interfaces.Describable;
+import Main.Interfaces.Lootable;
+import Main.Item;
+
 public abstract class Monster implements Describable, Lootable {
     private String name;
     private int maxHealth;      //Starting and maximum health
